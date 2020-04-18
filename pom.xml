@@ -172,7 +172,7 @@
                             <processors>
                                 <processor>org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor</processor>
                             </processors>
-                            <compilerArguments>-Aeclipselink.persistencexml=src/META-INF/persistence.xml</compilerArguments>
+                            <compilerArguments>-Aeclipselink.persistencexml=src/main/resources/META-INF/persistence.xml</compilerArguments>
                         </configuration>
                     </execution>
                 </executions>
