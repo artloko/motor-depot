@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="web_lab12_1_">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/d28gcndn6pf71r?sslmode=require"/>
+            <property name="javax.persistence.jdbc.user" value="fgfvxhkhwigsxl"/>
+            <property name="javax.persistence.jdbc.password" value="80dd0be8cc4ac8161ebffded0ce06c228b986e3f3854c25914a91e526fc7b552"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
