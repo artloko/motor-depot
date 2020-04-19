@@ -3,6 +3,7 @@ package controller.action.get;
 import controller.NavigationConstants;
 import controller.action.Action;
 import model.dao.IAutoDAO;
+import model.entity.Car;
 import model.entity.CarStatusEnum;
 import model.exception.DAOException;
 
@@ -26,7 +27,7 @@ public class AutosAction implements Action {
         RequestDispatcher dispatcher = servletContext.getRequestDispatcher(NavigationConstants.AUTOS);
 
         IAutoDAO autoDAO = (IAutoDAO) servletContext.getAttribute("autoDAO");
-        List list = null;
+        List<Car> list = null;
         try {
             list = autoDAO.getCarsByStatus(CarStatusEnum.N);
         } catch (DAOException e) {
