@@ -3,6 +3,9 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="web_lab12_1_">
+        <provider>
+            org.eclipse.persistence.jpa.PersistenceProvider
+        </provider>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-247-79-178.eu-west-1.compute.amazonaws.com:5432/d28gcndn6pf71r?sslmode=require"/>
             <property name="javax.persistence.jdbc.user" value="fgfvxhkhwigsxl"/>
