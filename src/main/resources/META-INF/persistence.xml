@@ -11,6 +11,7 @@
             <property name="javax.persistence.jdbc.user" value="fgfvxhkhwigsxl"/>
             <property name="javax.persistence.jdbc.password" value="80dd0be8cc4ac8161ebffded0ce06c228b986e3f3854c25914a91e526fc7b552"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="eclipselink.weaving" value="static"/>
         </properties>
     </persistence-unit>
 </persistence>
