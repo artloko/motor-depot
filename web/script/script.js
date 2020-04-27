@@ -1,28 +1,68 @@
-const dom = (function() {
+const dom = function(lang) {
+
+    let en = {
+        buttonSubmit: 'Accept',
+        login: 'Login',
+        loginPlaceholder: 'Enter login',
+        password: 'Password',
+        passwordPlaceholder: 'Enter password',
+        passwordRepeat: 'Repeat password',
+        passwordRepeatPlaceholder: 'Enter password again',
+        buttonRegistration: 'Register',
+        buttonLogout: 'Log out',
+        buttonLogin: 'Log in',
+        buttonLoginAsGuest: 'Login as guest',
+    };
+
+    let ru = {
+        buttonSubmit: 'Подтвердить',
+        login: 'Логин',
+        loginPlaceholder: 'Введите логин',
+        password: 'Пароль',
+        passwordPlaceholder: 'Введите пароль',
+        passwordRepeat: 'Повторите пароль',
+        passwordRepeatPlaceholder: 'Повторите ввод пароля',
+        buttonRegistration: 'Зарегистрироваться',
+        buttonLogout: 'Выйти',
+        buttonLogin: 'Войти',
+        buttonLoginAsGuest: 'Войти как гость',
+        driverNum: 'Номер водителя',
+        driverNumPlaceholder: 'Введите номер водителя',
+        autoNum: 'Номер автомобиля',
+        autoNumPlaceholder: 'Введите номер автомобиля',
+        tripNum: 'Номер рейса',
+        tripNumPlaceholder: 'Введите номер рейса'
+    };
+
+    function getLocale(lang) {
+        return lang === 'ru' ? ru : en;
+    }
+
+    let locale = getLocale(lang);
 
     var formId = "";
 
     const loginFrom = {
         login: {
-            label: 'Логин',
+            label: locale['login'],
             type: 'text',
             class: 'form-control',
-            placeholder: 'Введите логин',
+            placeholder: locale['loginPlaceholder'],
             name: 'login',
             id: 'login-input'
         },
         password: {
-            label: 'Пароль',
+            label: locale['password'],
             type: 'password',
             class: 'form-control',
-            placeholder: 'Введите пароль',
+            placeholder: locale['passwordPlaceholder'],
             name: 'password',
             id: 'password-input'
         },
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Войти'
+            value: locale['buttonLogin']
         }
     };
 
@@ -30,21 +70,21 @@ const dom = (function() {
         login: {
             type: 'hidden',
             class: 'form-control',
-            placeholder: 'Введите логин',
+            placeholder: locale['loginPlaceholder'],
             name: 'login',
             id: 'login-input'
         },
         password: {
             type: 'hidden',
             class: 'form-control',
-            placeholder: 'Введите пароль',
+            placeholder: locale['passwordPlaceholder'],
             name: 'password',
             id: 'password-input'
         },
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Войти как гость'
+            value: locale['buttonLoginAsGuest']
         }
     };
 
@@ -52,48 +92,48 @@ const dom = (function() {
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Выйти'
+            value: locale['buttonLogout']
         }
     };
 
     const registrationForm = {
         login: {
-            label: 'Логин',
+            label: locale['login'],
             type: 'text',
             class: 'form-control',
-            placeholder: 'Введите логин',
+            placeholder: locale['loginPlaceholder'],
             name: 'login',
             id: 'login-input'
         },
         password: {
-            label: 'Пароль',
+            label: locale['password'],
             type: 'password',
             class: 'form-control',
-            placeholder: 'Введите пароль',
+            placeholder: locale['passwordPlaceholder'],
             name: 'password',
             id: 'password-input'
         },
         repeatPassword: {
-            label: 'Повтор пароля',
+            label: locale['passwordRepeat'],
             type: 'password',
             class: 'form-control',
-            placeholder: 'Повторите пароль',
+            placeholder: locale['passwordRepeatPlaceholder'],
             name: 'repeat-password',
             id: 'password-input'
         },
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Зарегистрироваться'
+            value: locale['buttonRegistration']
         }
     };
 
     const tripsByDriverForm = {
         driverId: {
-            label: 'Номер водителя',
+            label: locale['driverNum'],
             type: 'number',
             class: 'form-control',
-            placeholder: 'Введите номер водителя',
+            placeholder: locale['driverNumPlaceholder'],
             name: 'driverId',
             minValue: '1',
             step: '1',
@@ -102,16 +142,16 @@ const dom = (function() {
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Подтвердить'
+            value: locale['buttonSubmit']
         }
     };
 
     const setCarStatusForm = {
         carId: {
-            label: 'Номер автомобиля',
+            label: locale['autoNum'],
             type: 'number',
             class: 'form-control',
-            placeholder: 'Введите номер автомобиля',
+            placeholder: locale['autoNumPlaceholder'],
             name: 'carId',
             minValue: '1',
             step: '1',
@@ -120,26 +160,26 @@ const dom = (function() {
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Подтвердить'
+            value: locale['buttonSubmit']
         }
     };
 
     const setDriverForm = {
         tripId: {
-            label: 'Номер рейса',
+            label: locale['tripNum'],
             type: 'number',
             class: 'form-control',
-            placeholder: 'Введите номер рейса',
+            placeholder: locale['tripNumPlaceholder'],
             name: 'tripId',
             minValue: '1',
             step: '1',
             id: 'tripId-input',
         },
         driverId: {
-            label: 'Номер водителя',
+            label: locale['driverNum'],
             type: 'number',
             class: 'form-control',
-            placeholder: 'Введите номер водителя',
+            placeholder: locale['driverNumPlaceholder'],
             name: 'driverId',
             minValue: '1',
             step: '1',
@@ -148,7 +188,7 @@ const dom = (function() {
         submitButton: {
             type: 'submit',
             class: 'btn btn-primary',
-            value: 'Подтвердить'
+            value: locale['buttonSubmit']
         }
     };
 
@@ -289,6 +329,4 @@ const dom = (function() {
     return {
         initPage
     }
-}());
-
-dom.initPage();
+};

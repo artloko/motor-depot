@@ -35,7 +35,7 @@ public class TripsByIdPostAction implements Action {
             } catch (DAOException e) {
                 e.printStackTrace();
             }
-            request.setAttribute("tripsByIdList", list);
+            request.setAttribute("tripsList", list);
         }
         dispatcher.forward(request, response);
     }
