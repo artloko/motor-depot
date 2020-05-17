@@ -20,5 +20,6 @@ public class NavigationConstants {
 
     public static final String REGISTRATION_PAGE = "/WEB-INF/view/registration.jsp";
 
+    public static final String CHAT_PAGE = "/WEB-INF/view/chat.jsp";
 
 }

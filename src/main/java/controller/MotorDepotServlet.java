@@ -35,6 +35,7 @@ public class MotorDepotServlet extends HttpServlet {
                 new LogoutAction(),
                 new RegistrationGetAction(),
                 new TripsAction(),
+                new ChatGetAction()
         };
         Action[] postActions = {
                 new SetCarStatusPostAction(),

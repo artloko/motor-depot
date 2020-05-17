@@ -50,6 +50,18 @@
             <a href="${pageContext.request.contextPath}/main?action=setCarStatus"><fmt:message key="index.set.car.status"/></a>
         </li>
     </c:if>
+    <c:if test="${sessionScope['user'].getTypeString() == 'client' || sessionScope['user'].getTypeString() == 'admin'}">
+        <li>
+            <a href="${pageContext.request.contextPath}/main?action=chat">
+                <c:if test="${sessionScope['user'].getTypeString() == 'admin'}">
+                    <fmt:message key="chatPage.openFromAdmin"/>
+                </c:if>
+                <c:if test="${sessionScope['user'].getTypeString() == 'client'}">
+                    <fmt:message key="chatPage.openFromClient"/>
+                </c:if>
+            </a>
+        </li>
+    </c:if>
 </ul>
 
 <div class="page-form">
