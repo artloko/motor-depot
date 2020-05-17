@@ -2,7 +2,7 @@ var websocket;
 var lang;
 
 function init() {
-    websocket = new WebSocket('ws://motor-depot.herokuapp.com/chat');
+    websocket = new WebSocket('wss://motor-depot.herokuapp.com/chat');
     websocket.onopen = function (event) {
         websocketOpen(event);
     };
